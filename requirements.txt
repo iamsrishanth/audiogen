@@ -1,7 +1,7 @@
 # please make sure you have already a pytorch install that is cuda enabled!
 av==11.0.0
 einops
-flashy==0.0.1
+flashy>=0.0.1
 hydra-core>=1.1
 protobuf==5.29.1
 tensorboard==2.18
