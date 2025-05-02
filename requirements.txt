@@ -3,6 +3,7 @@ av==11.0.0
 einops
 flashy>=0.0.1
 hydra-core>=1.1
+protobuf==5.29.1
 tensorboard==2.18
 hydra_colorlog
 julius
@@ -22,7 +23,6 @@ soundfile
 gradio
 torchmetrics
 encodec
-protobuf
 torchvision==0.16.0
 torchtext==0.16.0
 pesq
