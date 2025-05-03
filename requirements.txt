@@ -6,9 +6,9 @@ hydra-core>=1.1
 hydra_colorlog
 julius
 num2words
-numpy
+numpy==1.23.4
 sentencepiece
-spacy>=3.6.1
+spacy==3.7.6
 torch==2.1.0
 torchaudio>=2.0.0
 huggingface_hub
