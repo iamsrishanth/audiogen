@@ -10,10 +10,10 @@ import torch
 from audiocraft.models import MusicGen
 
 
-class TestMusicGenModel:
+class TestSEANetModel:
     def get_musicgen(self):
         mg = MusicGen.get_pretrained(name='debug', device='cpu')
-        mg.set_generation_params(duration=2.0, extend_stride=2.)
+        mg.set_generation_params(duration=2.0)
         return mg
 
     def test_base(self):
@@ -45,21 +45,6 @@ class TestMusicGenModel:
 
     def test_generate(self):
         mg = self.get_musicgen()
-        wav = mg.generate(
-            ['youpi', 'lapin dort'])
-        assert list(wav.shape) == [2, 1, 64000]
-
-    def test_generate_long(self):
-        mg = self.get_musicgen()
-        mg.max_duration = 3.
-        mg.set_generation_params(duration=4., extend_stride=2.)
-        wav = mg.generate(
-            ['youpi', 'lapin dort'])
-        assert list(wav.shape) == [2, 1, 32000 * 4]
-
-    def test_generate_two_step_cfg(self):
-        mg = self.get_musicgen()
-        mg.set_generation_params(duration=2.0, extend_stride=2., two_step_cfg=True)
         wav = mg.generate(
             ['youpi', 'lapin dort'])
         assert list(wav.shape) == [2, 1, 64000]
